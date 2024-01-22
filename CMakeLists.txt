@@ -1,6 +1,12 @@
 # Set the minimum required CMake version
 cmake_minimum_required(VERSION 3.10)
 
+# Set the project name
+project(Algorithms)
+
+# Set the C++ standard to C++17
+set(CMAKE_CXX_STANDARD 17)
+
 # Set the encoding to UTF-8
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
