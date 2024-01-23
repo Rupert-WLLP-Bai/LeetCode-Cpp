@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "../../../include/bintree.h"
+#include "../../../../include/bintree.h"
 
 using namespace std;
 

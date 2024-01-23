@@ -33,7 +33,7 @@ private:
         }
         
         // 横向遍历的上界是9
-        for (int i = start; i <= 9; ++i) { 
+        for (int i = start; i <= 9; ++i) {
             path.push_back(i); // 选取当前数字
             backtrack(n, k, i + 1); // 递归
             path.pop_back(); // 回溯，撤销选择

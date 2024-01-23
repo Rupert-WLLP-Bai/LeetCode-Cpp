@@ -6,7 +6,7 @@ TreeNode* buildTree(const vector<int>& nums) {
     }
     
     int index = 0;
-    TreeNode* root = new TreeNode(nums[index++]);
+    auto root = new TreeNode(nums[index++]);
     queue<TreeNode*> q;
     q.push(root);
     
