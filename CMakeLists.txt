@@ -1,42 +1,26 @@
-# Set the minimum required CMake version
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.0)
+project(LeetCode)
 
-# Set the project name
-project(Algorithms)
-
-# Set the C++ standard to C++17
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 
-# Set the encoding to UTF-8
-add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
-add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+# Include directories for header files
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# Set the source directory
-set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+# Compile source files from src/car/200/easy, src/car/200/mid, and src/car/200/hard
+# Assuming all source files are in the format 'mid/*.cpp', 'easy/*.cpp', and 'hard/*.cpp'
 
-# Set the output directory
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+file(GLOB_RECURSE SRC_FILES "${PROJECT_SOURCE_DIR}/src/carl-200/easy/*.cpp"
+                            "${PROJECT_SOURCE_DIR}/src/carl-200/mid/*.cpp"
+                            "${PROJECT_SOURCE_DIR}/src/carl-200/hard/*.cpp")
 
-# Get all the .cpp files recursively
-file(GLOB_RECURSE CPP_FILES ${SOURCE_DIR}/*.cpp)
+# Add bintree.cpp to the compilation
+set(BINTREE_CPP "${PROJECT_SOURCE_DIR}/include/bintree.cpp")
 
-# Iterate over each .cpp file
-foreach(CPP_FILE ${CPP_FILES})
-    # Get the file name without extension
-    get_filename_component(EXECUTABLE_NAME ${CPP_FILE} NAME_WE)
-
-    # Get the relative path of the .cpp file
-    file(RELATIVE_PATH RELATIVE_PATH ${SOURCE_DIR} ${CPP_FILE})
-
-    # Get the directory name of the .cpp file
-    get_filename_component(DIR_NAME ${RELATIVE_PATH} DIRECTORY)
-
-    # Create the corresponding output directory
-    file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${DIR_NAME})
-
-    # Add an executable target for each .cpp file
-    add_executable(${EXECUTABLE_NAME} ${CPP_FILE})
-
-    # Set the output directory for the executable
-    set_target_properties(${EXECUTABLE_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+foreach(SOURCE_FILE ${SRC_FILES})
+    # Get a filename without extension (NAME_WE will return the filename without extension)
+    get_filename_component(FILE_NAME ${SOURCE_FILE} NAME_WE)
+    
+    # Define the executable for each source file
+    add_executable(${FILE_NAME} ${SOURCE_FILE} ${BINTREE_CPP})
 endforeach()
