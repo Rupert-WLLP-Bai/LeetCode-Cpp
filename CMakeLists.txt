@@ -10,7 +10,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 # Compile source files from src/car/200/easy, src/car/200/mid, and src/car/200/hard
 # Assuming all source files are in the format 'mid/*.cpp', 'easy/*.cpp', and 'hard/*.cpp'
 
-file(GLOB_RECURSE SRC_FILES "${PROJECT_SOURCE_DIR}/src/carl-200/**/*.cpp")
+file(GLOB_RECURSE SRC_FILES "${PROJECT_SOURCE_DIR}/src/**/*.cpp")
 
 # Add bintree.cpp to the compilation
 set(BINTREE_CPP "${PROJECT_SOURCE_DIR}/include/bintree.cpp")
