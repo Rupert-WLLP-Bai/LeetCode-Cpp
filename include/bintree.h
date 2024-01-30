@@ -2,7 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <stack>
 #include <climits>
+#include <algorithm>
+#include <string>
 
 using namespace std;
 
@@ -19,6 +22,5 @@ struct TreeNode {
     }
 };
 
-TreeNode* buildTree(const vector<int>& nums);
-
-
+TreeNode *buildTree(const vector<int> &nums);
+void printTree(TreeNode *root);
