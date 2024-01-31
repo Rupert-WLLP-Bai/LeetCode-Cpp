@@ -67,3 +67,48 @@ void printTree(TreeNode *root) {
         levelSize = q.size();
     }
 }
+
+void _preorder(TreeNode *root, vector<int> &nums) {
+    if (root == nullptr) {
+        return;
+    }
+    nums.push_back(root->val);
+    _preorder(root->left, nums);
+    _preorder(root->right, nums);
+}
+
+void _inorder(TreeNode *root, vector<int> &nums) {
+    if (root == nullptr) {
+        return;
+    }
+    _inorder(root->left, nums);
+    nums.push_back(root->val);
+    _inorder(root->right, nums);
+}
+
+void _postorder(TreeNode *root, vector<int> &nums) {
+    if (root == nullptr) {
+        return;
+    }
+    _postorder(root->left, nums);
+    _postorder(root->right, nums);
+    nums.push_back(root->val);
+}
+
+TreeNode *findNode(TreeNode *root, int val) {
+    if (root == nullptr) {
+        return nullptr;
+    }
+    if (root->val == val) {
+        return root;
+    }
+    auto l = findNode(root->left, val);
+    auto r = findNode(root->right, val);
+    if (l) {
+        return l;
+    }
+    if (r) {
+        return r;
+    }
+    return nullptr;
+}

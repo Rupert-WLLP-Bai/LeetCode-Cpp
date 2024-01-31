@@ -24,3 +24,7 @@ struct TreeNode {
 
 TreeNode *buildTree(const vector<int> &nums);
 void printTree(TreeNode *root);
+void _preorder(TreeNode *root, vector<int> &nums);
+void _inorder(TreeNode *root, vector<int> &nums);
+void _postorder(TreeNode *root, vector<int> &nums);
+TreeNode *findNode(TreeNode *root, int val);
