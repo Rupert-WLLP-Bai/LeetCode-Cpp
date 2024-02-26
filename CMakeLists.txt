@@ -12,13 +12,13 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 file(GLOB_RECURSE SRC_FILES "${PROJECT_SOURCE_DIR}/src/**/*.cpp")
 
-# Add bintree.cpp to the compilation
-set(BINTREE_CPP "${PROJECT_SOURCE_DIR}/include/bintree.cpp")
+# Add template files
+file(GLOB TEMPLATE_CPP "${PROJECT_SOURCE_DIR}/include/*.cpp")
 
 foreach(SOURCE_FILE ${SRC_FILES})
     # Get a filename without extension (NAME_WE will return the filename without extension)
     get_filename_component(FILE_NAME ${SOURCE_FILE} NAME_WE)
     
     # Define the executable for each source file
-    add_executable(${FILE_NAME} ${SOURCE_FILE} ${BINTREE_CPP})
+    add_executable(${FILE_NAME} ${SOURCE_FILE} ${TEMPLATE_CPP})
 endforeach()
