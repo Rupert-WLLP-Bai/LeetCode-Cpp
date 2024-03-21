@@ -12,6 +12,9 @@ class Solution {
      * @return ListNode*
      */
     ListNode *detectCycle(ListNode *head) {
+        if (head == nullptr) {
+            return nullptr;
+        }
         // 快慢指针
         auto slow = head;
         auto fast = head;
