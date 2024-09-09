@@ -1,5 +1,5 @@
 // 关于多态
-#include "core.h"
+#include "../../include/core.h"
 using namespace std;
 
 // 1. 函数重载

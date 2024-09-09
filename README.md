@@ -16,8 +16,8 @@ make
 
 [总结](./src/carl-200/README.md)
 
-1. bactrack [回溯](./src/carl-200/backtrack)
-2. bintree [二叉树](./src/carl-200/bintree)
-3. dp [动态规划](./src/carl-200/dp)
+1. bactrack [回溯](./src/intern/backtrack)
+2. bintree [二叉树](./src/intern/bintree)
+3. dp [动态规划](./src/intern/dp)
 
 ### huawei 华为机试题
