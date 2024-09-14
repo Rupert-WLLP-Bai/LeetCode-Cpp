@@ -59,3 +59,7 @@ void preOrderNonRecursive(TreeNode *root) {
 // 中序遍历
 void inOrder(TreeNode *root) {
 }
+
+int main() {
+    return 0;
+}
