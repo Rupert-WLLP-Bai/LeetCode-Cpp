@@ -4,6 +4,11 @@ project(LeetCode)
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 
+# 设置为 Release 模式，启用优化
+set(CMAKE_BUILD_TYPE Release)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g0")
+
 # Include directories for header files
 include_directories(${PROJECT_SOURCE_DIR}/include)
 

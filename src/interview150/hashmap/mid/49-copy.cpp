@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ class Solution {
         unordered_map<string, vector<string>>
             m; // key: sorted string, value: original string
         for (auto &&s : strs) {
+            // 使用&&避免拷贝 &&是右值引用，表示对临时变量的引用
             string tmp = s;
             sort(tmp.begin(), tmp.end()); // sort the string
             m[tmp].push_back(s);          // group the anagrams
