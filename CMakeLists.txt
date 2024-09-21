@@ -3,6 +3,7 @@ project(LeetCode)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 设置为 Release 模式，启用优化
 set(CMAKE_BUILD_TYPE Release)
