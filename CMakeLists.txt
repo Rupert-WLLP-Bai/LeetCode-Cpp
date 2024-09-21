@@ -22,9 +22,20 @@ file(GLOB_RECURSE SRC_FILES "${PROJECT_SOURCE_DIR}/src/**/*.cpp")
 file(GLOB TEMPLATE_CPP "${PROJECT_SOURCE_DIR}/include/*.cpp")
 
 foreach(SOURCE_FILE ${SRC_FILES})
-    # Get a filename without extension (NAME_WE will return the filename without extension)
-    get_filename_component(FILE_NAME ${SOURCE_FILE} NAME_WE)
-    
+    # Get the directory path of the source file
+    get_filename_component(DIR_PATH ${SOURCE_FILE} DIRECTORY)
+
+    # Split the directory path into components (parent directories)
+    string(REPLACE "${PROJECT_SOURCE_DIR}/src/" "" RELATIVE_PATH ${DIR_PATH})
+    string(REPLACE "/" "-" DIR_NAME_PART ${RELATIVE_PATH})
+
+    # Get the filename without extension
+    get_filename_component(FILE_NAME_WE ${SOURCE_FILE} NAME_WE)
+
+    # Construct the executable name using the directory structure and file name
+    set(EXECUTABLE_NAME "${DIR_NAME_PART}-${FILE_NAME_WE}")
+
     # Define the executable for each source file
-    add_executable(${FILE_NAME} ${SOURCE_FILE} ${TEMPLATE_CPP})
+    add_executable(${EXECUTABLE_NAME} ${SOURCE_FILE} ${TEMPLATE_CPP})
+
 endforeach()
