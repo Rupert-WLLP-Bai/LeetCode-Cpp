@@ -18,6 +18,11 @@ start_time = time.time()
 os.chdir('build')
 logging.info('Changed directory to build')
 
+# 如果存在CMakeCache.txt文件，删除它
+if os.path.exists('CMakeCache.txt'):
+    logging.info('Found existing CMakeCache.txt, deleting it')
+    os.remove('CMakeCache.txt')
+
 # 执行 cmake ..
 logging.info('Running cmake')
 # 判断平台 如果是Windows系统，使用cmake .. -G "Ninja"，否则使用cmake ..
