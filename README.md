@@ -28,6 +28,8 @@ LeetCode 面试经典 150 题 , 按照题目类型分类。
 - [链表](./src/interview150/linkedlist)
 - [多维动态规划](./src/interview150/multi-dimension-dp)
 - [滑动窗口](./src/interview150/slide-windows)
+- [矩阵](./src/interview150/matrix)
+- [数学](./src/interview150/mathmatics)
 
 ### intern
 
