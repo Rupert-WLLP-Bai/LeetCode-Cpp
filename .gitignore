@@ -2,3 +2,8 @@ build/
 .cache/
 .idea/
 cmake-build-debug/
+
+# Go
+go/bin/
+*.exe
+*.test
